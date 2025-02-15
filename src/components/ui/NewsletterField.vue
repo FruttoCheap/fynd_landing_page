@@ -10,9 +10,9 @@
         /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
         <input type="text" name="b_2d0001086ecf7d3d1ac8599e2_fa111c3935" tabindex="-1" value="">
       </div>
-      <div class="optionalParent">
-        <div class="clear foot">
-          <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="" value="Subscribe" style="display: flex; justify-self: end; margin: 0">
+      <div class="flex flex-row justify-center">
+        <div class="bg-white rounded-xl shadow-md text-center p-3">
+          <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="" value="Subscribe">
         </div>
       </div>
     </div>

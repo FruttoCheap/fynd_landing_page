@@ -64,13 +64,7 @@ onMounted(() => {
 
 .card-content {
   padding: 3rem;
-  backdrop-filter: blur(0px) brightness(0.6);
-  height: 100%;
-  transition: all 0.3s ease-in-out;
-}
-
-.card-content:hover {
-  backdrop-filter: blur(5px) brightness(0.6);
+  backdrop-filter: brightness(0.6);
   height: 100%;
 }
 </style>

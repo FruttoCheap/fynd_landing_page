@@ -4,7 +4,7 @@ import NewsletterField from "./ui/NewsletterField.vue";
 
 <template>
   <div class="bg-orange-400 p-6 rounded-3xl shadow-md text-center mx-12 my-24">
-    <div class="relative flex justify-start bg-white border border-orange-400 py-3 px-9 rounded-2xl shadow-xl shadow-black-600 -mt-12 max-w-xl">
+    <div class="relative flex justify-center md:justify-start bg-white border border-orange-400 py-3 px-9 rounded-2xl shadow-xl shadow-black-600 -mt-12 max-w-xl">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 z-20">Diventa un FYNDER</h2>
     </div>
     <div class="flex flex-col md:flex-row md:gap-8 justify-start items-start align-bottom mt-9 px-1 md:px-6">
