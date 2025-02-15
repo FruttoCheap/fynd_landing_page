@@ -9,18 +9,13 @@
     </div>
 </template>
 
-<script>
-export default {
-    props: {
-        color: {
-            type: String,
-            default: 'black'
-        }
+<script setup>
+const props = defineProps({
+    color: {
+        type: String,
+        default: 'black'
     }
-}
-</script>
-
-<script>
+});
 </script>
 
 <style scoped></style>
