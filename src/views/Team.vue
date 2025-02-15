@@ -38,16 +38,23 @@
 </template>
 
 <script setup>
+import andreaImage from '../assets/imgs/team/andrea.png';
+import giulioImage from '../assets/imgs/team/giulio.png';
+import marcoImage from '../assets/imgs/team/pinto.png';
+import giorgioImage from '../assets/imgs/team/giorgio.png';
+import fedeImage from '../assets/imgs/team/federica.png';
+import edoImage from '../assets/imgs/team/edo.jpg';
+
 const founders = [
-  { id: 1, name: "Andrea Villa", role: "CEO", description: "Mente del team, tiene con forza le redini del progetto", pic: "https://picsum.photos/200?random=1" },
-  { id: 2, name: "Giulio Desana", role: "CTO", description: "Si diverte a sviluppare, forse un po' troppo...", pic: "https://picsum.photos/200?random=2" },
-  { id: 3, name: "Marco Pinto", role: "COO", description: "Semplificare ed ottimizzare sono la sua passione, ma ha comunque degli amici", pic: "https://picsum.photos/200?random=3" }
+  { id: 1, name: "Andrea Villa", role: "CEO", description: "Mente del team, tiene con forza le redini del progetto", pic: andreaImage },
+  { id: 2, name: "Giulio Desana", role: "CTO", description: "Si diverte a sviluppare, forse un po' troppo...", pic: giulioImage },
+  { id: 3, name: "Marco Pinto", role: "COO", description: "Semplificare ed ottimizzare sono la sua passione, ma ha comunque degli amici", pic: marcoImage }
 ];
 
 const collaborators = [
-  { id: 4, name: "Giorgio Francone", role: "Commercialista", description: "L'esperienza e la competenza di cui abbiamo bisogno", pic: "https://picsum.photos/200?random=4" },
-  { id: 5, name: "Federica Fino", role: "Product Management", description: "Tanto oggettiva quanto professionale", pic: "https://picsum.photos/200?random=5" },
-  { id: 6, name: "Edoardo Morone", role: "Designer", description: "Gli occhi di Fynd, 12/10 per occhio", pic: "https://picsum.photos/200?random=6" }
+  { id: 4, name: "Giorgio Francone", role: "Commercialista", description: "L'esperienza e la competenza di cui abbiamo bisogno", pic: giorgioImage },
+  { id: 5, name: "Federica Fino", role: "Product Management", description: "Tanto oggettiva quanto professionale", pic: fedeImage },
+  { id: 6, name: "Edoardo Morone", role: "Designer", description: "Gli occhi di Fynd, 12 decimi per occhio", pic: edoImage }
 ];
 </script>
 

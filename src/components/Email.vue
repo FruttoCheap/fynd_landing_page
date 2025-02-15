@@ -9,7 +9,7 @@ import NewsletterField from "./ui/NewsletterField.vue";
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 z-20">Diventa un FYNDER</h2>
     </div>
     <div
-      class="flex flex-col md:flex-row md:gap-8 justify-start items-start md:items-center align-bottom mt-9 px-1 md:px-6">
+      class="flex flex-col md:flex-row md:gap-8 justify-start items-start md:items-center align-bottom mt-9 md:mt-3 px-1 md:px-6">
       <div class="flex md:w-1/2">
         <p class="no-select text-white text-base font-semibold md:text-left">
           Vuoi essere uno dei primi FYNDER? <br> Iscriviti alla nostra newsletter per rimanere aggiornato sul progetto.

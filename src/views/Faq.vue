@@ -4,17 +4,16 @@
     <section class="text-center max-w-3xl mx-auto mb-16">
       <h1 class="text-5xl font-extrabold">Domande Frequenti</h1>
       <p class="text-lg text-gray-600 mt-4">
-        "Qui puoi trovare le risposte alle domande più comuni."
+        Hai qualche dubbio sul progetto? <br> Sei nel posto giusto...
       </p>
     </section>
 
     <!-- FAQ List -->
     <section class="max-w-4xl mx-auto">
-      <div v-for="(faq, index) in faqs" :key="index" class="border-b border-gray-300">
-        <button @click="toggleFAQ(index)" 
-        class="w-full text-left flex justify-between items-center focus:outline-none" 
-        :class="['w-full text-left flex justify-between items-center focus:outline-none', index % 2 === 0 ? 'orange' : 'orange']" 
-        style="margin-bottom: 14px;">
+      <div v-for="(faq, index) in faqs" :key="index">
+        <button @click="toggleFAQ(index)" class="w-full text-left flex justify-between items-center focus:outline-none"
+          :class="['w-full text-left flex justify-between items-center focus:outline-none', index % 2 === 0 ? 'bg-orange-400' : 'bg-orange-500']"
+          style="margin-bottom: 14px;">
           <h3 class="text-lg font-semibold">{{ faq.question }}</h3>
           <span class="text-xl">{{ faq.open ? '−' : '+' }}</span>
         </button>
@@ -48,7 +47,8 @@ const toggleFAQ = (index) => {
 </script>
 
 <style scoped>
-  h1, h3 {
-    font-family: 'Inter', sans-serif;
-  }
+h1,
+h3 {
+  font-family: 'Inter', sans-serif;
+}
 </style>

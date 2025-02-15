@@ -2,9 +2,13 @@
   <nav class="flex flex-col">
     <div class="navbar">
       <div class="navbar-left">
-        <router-link class="flex flex-row justify-center items-center page-link" to="/">
+        <router-link class="flex justify-center items-center page-link" to="/">
           <Logo :color="isNavbarExpanded ? 'white' : 'black'" />
         </router-link>
+      </div>
+      <div
+        :class="['navbar-center', 'text-2xl', 'font-bold', 'pe-8', 'duration-300', 'transition-all', { 'text-white': isNavbarExpanded }]">
+        FYND
       </div>
       <div class="navbar-right text-base">
         <i :class="['fas', 'fa-navicon', 'cursor-pointr', 'transition-all', 'duration-300', { 'text-white': isNavbarExpanded }]"
@@ -15,6 +19,8 @@
       <router-link class="page-link" to="/" :hidden="!isNavbarExpanded" @click="toggleNavbar">Home</router-link>
       <router-link class="page-link" to="/team" :hidden="!isNavbarExpanded" @click="toggleNavbar">Team</router-link>
       <router-link class="page-link" to="/faq" :hidden="!isNavbarExpanded" @click="toggleNavbar">FAQ</router-link>
+      <router-link class="page-link" to="/quiz" :hidden="!isNavbarExpanded" @click="toggleNavbar">Dicci la
+        tua</router-link>
       <div class="dropdown">
         <select class="language-selector" :hidden="!isNavbarExpanded">
           <option value="en">English (EN)</option>
@@ -59,6 +65,7 @@ function toggleNavbar() {
   align-items: center;
   justify-items: center;
   justify-content: center;
+  flex-basis: 1;
   z-index: 300;
 }
 
@@ -135,6 +142,7 @@ function toggleNavbar() {
   top: 0;
   z-index: -20;
   display: flex;
+  gap: 1rem;
   flex-direction: column;
   align-items: center;
   padding-top: 50%;

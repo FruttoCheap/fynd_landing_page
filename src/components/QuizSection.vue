@@ -11,7 +11,7 @@ import ActionButton from "./ui/ActionButton.vue";
     </div>
     <div class="flex flex-col md:flex-row md:gap-8 justify-center items-center mt-6">
       <div class="flex w-4/5">
-        <p class="no-select text-gray-700 text-base font-semibold md:text-left">
+        <p class="no-select text-gray-700 text-base font-semibold md:text-left md:ms-6">
           Sono 10 domande rapidissime dove ti chiederemo quanto è interessante l’idea e su quali aspetti concentrarci.
         </p>
       </div>

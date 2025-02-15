@@ -7,8 +7,12 @@
       </router-link>
     </div>
     <div class="navbar-center text-base">
-      <router-link class="page-link" to="/team">Chi siamo</router-link>
-      <router-link class="page-link" to="/faq">FAQ</router-link>
+      <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/' }" to="/">Home</router-link>
+      <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/team' }" to="/team">Chi
+        siamo</router-link>
+      <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/faq' }"
+        to="/faq">FAQ</router-link>
+      <router-link class="page-link" :class="{ active: $route.path === '/quiz' }" to="/quiz">Dicci la tua</router-link>
     </div>
     <div class="navbar-right text-base">
       <div class="dropdown">
@@ -108,6 +112,10 @@ import Logo from './ui/Logo.vue';
 }
 
 .page-link:hover {
+  color: #ff8000;
+}
+
+.active {
   color: #ff8000;
 }
 </style>
