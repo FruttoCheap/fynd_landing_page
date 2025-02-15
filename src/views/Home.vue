@@ -20,7 +20,7 @@ import Cards from "../components/Cards.vue";
 import QuizSection from "../components/QuizSection.vue";
 import Email from "../components/Email.vue";
 
-const email = ref(null);
+const email = ref<HTMLElement | null>(null);
 
 function scrollToLastSection() {
   email.value?.scrollIntoView({ behavior: 'smooth' });
