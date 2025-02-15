@@ -2,19 +2,19 @@
   <div class="min-h-screen bg-white text-gray-900 p-8">
     <!-- Mission & Vision -->
     <section class="text-center max-w-3xl mx-auto mb-16">
-      <h1 class="text-5xl font-extrabold">La Nostra Missione e Visione</h1>
+      <h1 class="text-5xl font-extrabold">Il Nostro Team</h1>
       <p class="text-lg text-gray-600 mt-4">
-        "Qui va la frase della vostra mission e vision, per comunicare al mondo il vostro scopo."
+        Le facce che cambieranno il mondo dei viaggi...
       </p>
     </section>
 
     <!-- Team Section -->
     <section class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-12">Il Nostro Team</h2>
-      
+
       <!-- Founders -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <div v-for="founder in founders" :key="founder.id" class="bg-white shadow-2xl p-8 rounded-3xl text-center border border-gray-200">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-center justify-center">
+        <div v-for="founder in founders" :key="founder.id"
+          class="hover:shadow-2xl border border-transparent hover:border-orange-400 p-8 rounded-xl duration-300 transition-all mx-12 md:mx-0">
           <img :src="founder.pic" :alt="founder.name" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
           <h3 class="text-xl font-semibold">{{ founder.name }}</h3>
           <p class="text-sm text-gray-500">{{ founder.role }}</p>
@@ -23,9 +23,11 @@
       </div>
 
       <!-- Collaborators -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div v-for="collaborator in collaborators" :key="collaborator.id" class="bg-white shadow-xl p-6 rounded-2xl text-center border border-gray-200">
-          <img :src="collaborator.pic" :alt="collaborator.name" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full md:w-3/4 mx-auto">
+        <div v-for="collaborator in collaborators" :key="collaborator.id"
+          class="hover:shadow-2xl border border-transparent hover:border-orange-400 p-8 rounded-xl duration-300 transition-all mx-12 md:mx-0">
+          <img :src="collaborator.pic" :alt="collaborator.name"
+            class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
           <h3 class="text-lg font-semibold">{{ collaborator.name }}</h3>
           <p class="text-sm text-gray-500">{{ collaborator.role }}</p>
           <p class="mt-2 text-gray-700">{{ collaborator.description }}</p>
@@ -37,20 +39,21 @@
 
 <script setup>
 const founders = [
-  { id: 1, name: "Founder 1", role: "CEO", description: "Breve descrizione del ruolo e della persona.", pic: "https://via.placeholder.com/150" },
-  { id: 2, name: "Founder 2", role: "CTO", description: "Breve descrizione del ruolo e della persona.", pic: "https://via.placeholder.com/150" },
-  { id: 3, name: "Founder 3", role: "COO", description: "Breve descrizione del ruolo e della persona.", pic: "https://via.placeholder.com/150" }
+  { id: 1, name: "Andrea Villa", role: "CEO", description: "Mente del team, tiene con forza le redini del progetto", pic: "https://picsum.photos/200?random=1" },
+  { id: 2, name: "Giulio Desana", role: "CTO", description: "Si diverte a sviluppare, forse un po' troppo...", pic: "https://picsum.photos/200?random=2" },
+  { id: 3, name: "Marco Pinto", role: "COO", description: "Semplificare ed ottimizzare sono la sua passione, ma ha comunque degli amici", pic: "https://picsum.photos/200?random=3" }
 ];
 
 const collaborators = [
-  { id: 4, name: "Collaboratore 1", role: "Designer", description: "Breve descrizione del collaboratore.", pic: "https://via.placeholder.com/100" },
-  { id: 5, name: "Collaboratore 2", role: "Sviluppatore", description: "Breve descrizione del collaboratore.", pic: "https://via.placeholder.com/100" },
-  { id: 6, name: "Collaboratore 3", role: "Marketing", description: "Breve descrizione del collaboratore.", pic: "https://via.placeholder.com/100" }
+  { id: 4, name: "Giorgio Francone", role: "Commercialista", description: "L'esperienza e la competenza di cui abbiamo bisogno", pic: "https://picsum.photos/200?random=4" },
+  { id: 5, name: "Federica Fino", role: "Product Management", description: "Tanto oggettiva quanto professionale", pic: "https://picsum.photos/200?random=5" },
+  { id: 6, name: "Edoardo Morone", role: "Designer", description: "Gli occhi di Fynd, 12/10 per occhio", pic: "https://picsum.photos/200?random=6" }
 ];
 </script>
 
 <style scoped>
-  h1, h2 {
-    font-family: 'Inter', sans-serif;
-  }
+h1,
+h2 {
+  font-family: 'Inter', sans-serif;
+}
 </style>

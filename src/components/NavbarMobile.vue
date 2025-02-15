@@ -3,18 +3,18 @@
     <div class="navbar">
       <div class="navbar-left">
         <router-link class="flex flex-row justify-center items-center page-link" to="/">
-          <img src="https://via.placeholder.com/50" alt="Logo" class="logo" />
-          <span :class="['brand-name', 'text-2xl', 'transition-all', 'duration-300', 'text-black', {'text-white': isNavbarExpanded}]">FYND</span>
+          <Logo :color="isNavbarExpanded ? 'white' : 'black'" />
         </router-link>
       </div>
       <div class="navbar-right text-base">
-        <i :class="['fas', 'fa-navicon', 'cursor-pointr', 'transition-all', 'duration-300', {'text-white': isNavbarExpanded}]" @click="toggleNavbar"></i>
+        <i :class="['fas', 'fa-navicon', 'cursor-pointr', 'transition-all', 'duration-300', { 'text-white': isNavbarExpanded }]"
+          @click="toggleNavbar"></i>
       </div>
     </div>
     <div :class="['navbar-items', { 'expanded': isNavbarExpanded }]">
-      <router-link class="page-link" to="/" :hidden="!isNavbarExpanded">Home</router-link>
-      <router-link class="page-link" to="/team" :hidden="!isNavbarExpanded">Team</router-link>
-      <router-link class="page-link" to="/faq" :hidden="!isNavbarExpanded">FAQ</router-link>
+      <router-link class="page-link" to="/" :hidden="!isNavbarExpanded" @click="toggleNavbar">Home</router-link>
+      <router-link class="page-link" to="/team" :hidden="!isNavbarExpanded" @click="toggleNavbar">Team</router-link>
+      <router-link class="page-link" to="/faq" :hidden="!isNavbarExpanded" @click="toggleNavbar">FAQ</router-link>
       <div class="dropdown">
         <select class="language-selector" :hidden="!isNavbarExpanded">
           <option value="en">English (EN)</option>
@@ -32,6 +32,7 @@
 </template>
 
 <script setup lang="ts">
+import Logo from './ui/Logo.vue';
 import { ref } from 'vue';
 
 const isNavbarExpanded = ref(false);
@@ -51,17 +52,14 @@ function toggleNavbar() {
   color: black;
 }
 
-.navbar-left, .navbar-center, .navbar-right {
+.navbar-left,
+.navbar-center,
+.navbar-right {
   display: flex;
   align-items: center;
   justify-items: center;
   justify-content: center;
   z-index: 300;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
 }
 
 .brand-name {
@@ -82,9 +80,10 @@ function toggleNavbar() {
   display: none;
   position: absolute;
   margin-top: 10%;
-  background-color: white; /* Set background to white */
+  background-color: white;
+  /* Set background to white */
   min-width: 100%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 4px;
 }
@@ -106,9 +105,12 @@ function toggleNavbar() {
 
 .language-selector {
   margin-right: 20px;
-  padding: 10px; /* Increased padding */
-  background-color: transparent; /* Set background to white */
-  border-radius: 4px; /* Optional: Add border radius */
+  padding: 10px;
+  /* Increased padding */
+  background-color: transparent;
+  /* Set background to white */
+  border-radius: 4px;
+  /* Optional: Add border radius */
   color: white;
 }
 
@@ -118,7 +120,6 @@ function toggleNavbar() {
   font-weight: bold;
   z-index: 200;
   transition: color 0.3s ease;
-  padding-bottom: 1rem;
 }
 
 .page-link:disabled {

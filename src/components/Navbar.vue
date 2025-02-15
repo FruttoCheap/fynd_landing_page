@@ -2,7 +2,7 @@
   <nav class="navbar">
     <div class="navbar-left">
       <router-link class="flex flex-row page-link items-center" to="/">
-        <img src="https://via.placeholder.com/50" alt="Logo" class="logo" />
+        <Logo class="logo" color="#000000" />
         <span class="brand-name text-2xl">FYND</span>
       </router-link>
     </div>
@@ -28,6 +28,8 @@
 </template>
 
 <script setup lang="ts">
+import Logo from './ui/Logo.vue';
+
 </script>
 
 <style scoped>
@@ -40,16 +42,13 @@
   color: black;
 }
 
-.navbar-left, .navbar-center, .navbar-right {
+.navbar-left,
+.navbar-center,
+.navbar-right {
   display: flex;
   align-items: center;
   justify-items: center;
   justify-content: center;
-}
-
-.logo {
-  width: 50px;
-  height: 50px;
 }
 
 .brand-name {
@@ -66,9 +65,10 @@
   display: none;
   position: absolute;
   left: -10%;
-  background-color: white; /* Set background to white */
+  background-color: white;
+  /* Set background to white */
   min-width: 100%;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 4px;
 }
@@ -90,9 +90,12 @@
 
 .language-selector {
   margin-right: 20px;
-  padding: 10px; /* Increased padding */
-  background-color: white; /* Set background to white */
-  border-radius: 4px; /* Optional: Add border radius */
+  padding: 10px;
+  /* Increased padding */
+  background-color: white;
+  /* Set background to white */
+  border-radius: 4px;
+  /* Optional: Add border radius */
 }
 
 .page-link {

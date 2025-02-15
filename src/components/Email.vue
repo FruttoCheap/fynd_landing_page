@@ -1,4 +1,4 @@
-<script setup lang="js">
+<script setup lang="ts">
 import NewsletterField from "./ui/NewsletterField.vue";
 </script>
 

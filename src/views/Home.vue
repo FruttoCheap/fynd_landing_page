@@ -27,5 +27,4 @@ function scrollToLastSection() {
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
