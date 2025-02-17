@@ -7,33 +7,29 @@
       </router-link>
     </div>
     <div class="navbar-center text-base">
-      <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/' }" to="/">Home</router-link>
-      <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/team' }" to="/team">Chi
-        siamo</router-link>
-      <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/faq' }"
-        to="/faq">FAQ</router-link>
-      <router-link class="page-link" :class="{ active: $route.path === '/quiz' }" to="/quiz">Dicci la tua</router-link>
+      <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/' }" to="/">{{ t('navbar.home')
+      }}</router-link>
+      <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/team' }" to="/team">{{
+        t('navbar.team') }}</router-link>
+      <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/faq' }" to="/faq">{{
+        t('navbar.faq') }}</router-link>
+      <router-link class="page-link" :class="{ active: $route.path === '/quiz' }" to="/quiz">{{ t('navbar.quiz')
+      }}</router-link>
     </div>
     <div class="navbar-right text-base">
-      <div class="dropdown">
-        <select class="language-selector">
-          <option value="en">English (EN)</option>
-          <option value="it">Italiano (IT)</option>
-          <!-- Add more languages if needed -->
-        </select>
-        <div class="dropdown-content">
-          <a href="#">English (EN)</a>
-          <a href="#">Italiano (IT)</a>
-          <!-- Add more languages if needed -->
-        </div>
-      </div>
+      <select v-model="locale" class="language-selector">
+        <option value="en">{{ t('navbar.language.en') }}</option>
+        <option value="it">{{ t('navbar.language.it') }}</option>
+      </select>
     </div>
   </nav>
 </template>
 
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import Logo from './ui/Logo.vue';
 
+const { locale, t } = useI18n();
 </script>
 
 <style scoped>
@@ -41,7 +37,6 @@ import Logo from './ui/Logo.vue';
   display: flex;
   justify-content: space-between;
   align-items: center;
-  justify-items: center;
   padding: 20px;
   color: black;
 }
@@ -51,7 +46,6 @@ import Logo from './ui/Logo.vue';
 .navbar-right {
   display: flex;
   align-items: center;
-  justify-items: center;
   justify-content: center;
 }
 
@@ -60,46 +54,11 @@ import Logo from './ui/Logo.vue';
   font-weight: bold;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  left: -10%;
-  background-color: white;
-  /* Set background to white */
-  min-width: 100%;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 4px;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 8px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 .language-selector {
   margin-right: 20px;
   padding: 10px;
-  /* Increased padding */
   background-color: white;
-  /* Set background to white */
   border-radius: 4px;
-  /* Optional: Add border radius */
 }
 
 .page-link {

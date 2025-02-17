@@ -2,9 +2,9 @@
   <div class="min-h-screen bg-white text-gray-900 p-8">
     <!-- Mission & Vision -->
     <section class="text-center max-w-3xl mx-auto mb-16">
-      <h1 class="text-5xl font-extrabold">Il Nostro Team</h1>
+      <h1 class="text-5xl font-extrabold">{{ t('team.title') }}</h1>
       <p class="text-lg text-gray-600 mt-4">
-        Le facce che cambieranno il mondo dei viaggi...
+        {{ t('team.subtitle') }}
       </p>
     </section>
 
@@ -44,18 +44,29 @@ import marcoImage from '../assets/imgs/team/pinto.png';
 import giorgioImage from '../assets/imgs/team/giorgio.png';
 import fedeImage from '../assets/imgs/team/federica.png';
 import edoImage from '../assets/imgs/team/edo.jpg';
+import { ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-const founders = [
-  { id: 1, name: "Andrea Villa", role: "CEO", description: "Mente del team, tiene con forza le redini del progetto", pic: andreaImage },
-  { id: 2, name: "Giulio Desana", role: "CTO", description: "Si diverte a sviluppare, forse un po' troppo...", pic: giulioImage },
-  { id: 3, name: "Marco Pinto", role: "COO", description: "Semplificare ed ottimizzare sono la sua passione, ma ha comunque degli amici", pic: marcoImage }
-];
+const { t, locale } = useI18n();
 
-const collaborators = [
-  { id: 4, name: "Giorgio Francone", role: "Commercialista", description: "L'esperienza e la competenza di cui abbiamo bisogno", pic: giorgioImage },
-  { id: 5, name: "Federica Fino", role: "Product Management", description: "Tanto oggettiva quanto professionale", pic: fedeImage },
-  { id: 6, name: "Edoardo Morone", role: "Designer", description: "Gli occhi di Fynd, 12 decimi per occhio", pic: edoImage }
-];
+const founders = ref([]);
+const collaborators = ref([]);
+
+const updateTeam = () => {
+  founders.value = [
+    { id: 1, name: "Andrea Villa", role: "CEO", description: t('team.founders.andrea.description'), pic: andreaImage },
+    { id: 2, name: "Giulio Desana", role: "CTO", description: t('team.founders.giulio.description'), pic: giulioImage },
+    { id: 3, name: "Marco Pinto", role: "COO", description: t('team.founders.marco.description'), pic: marcoImage }
+  ];
+
+  collaborators.value = [
+    { id: 4, name: "Giorgio Francone", role: "Commercialista", description: t('team.collaborators.giorgio.description'), pic: giorgioImage },
+    { id: 5, name: "Federica Fino", role: "Product Management", description: t('team.collaborators.federica.description'), pic: fedeImage },
+    { id: 6, name: "Edoardo Morone", role: "Designer", description: t('team.collaborators.edoardo.description'), pic: edoImage }
+  ];
+};
+
+watch(locale, updateTeam, { immediate: true });
 </script>
 
 <style scoped>

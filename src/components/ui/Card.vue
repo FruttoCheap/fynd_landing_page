@@ -35,7 +35,7 @@ onMounted(() => {
 
 <style scoped>
 .background-image-div1 {
-  background-image: url('../../assets/imgs/beach.jpg');
+  background-image: url('../../assets/imgs/beach_resize.png');
   position: relative;
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@ onMounted(() => {
 }
 
 .background-image-div2 {
-  background-image: url('../../assets/imgs/mountain.jpg');
+  background-image: url('../../assets/imgs/mountain_resize.png');
   position: relative;
   background-attachment: fixed;
   background-size: cover;
@@ -59,7 +59,7 @@ onMounted(() => {
 }
 
 .background-image-div3 {
-  background-image: url('../../assets/imgs/city.jpg');
+  background-image: url('../../assets/imgs/city_resize.png');
   position: relative;
   background-attachment: fixed;
   background-size: cover;

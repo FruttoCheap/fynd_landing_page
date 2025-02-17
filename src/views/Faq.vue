@@ -2,9 +2,9 @@
   <div class="min-h-screen bg-white text-gray-900 p-8">
     <!-- FAQ Header -->
     <section class="text-center max-w-3xl mx-auto mb-16">
-      <h1 class="text-5xl font-extrabold">Domande Frequenti</h1>
+      <h1 class="text-5xl font-extrabold">{{ t('faq.title') }}</h1>
       <p class="text-lg text-gray-600 mt-4">
-        Hai qualche dubbio sul progetto? <br> Sei nel posto giusto...
+        {{ t('faq.subtitle') }}
       </p>
     </section>
 
@@ -24,22 +24,31 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
 
-const faqs = ref([
-  { question: "Come funziona il servizio?", answer: "Il nostro servizio ti aiuta a organizzare il tuo viaggio in pochi click.", open: false },
-  { question: "Quali sono i costi?", answer: "I costi variano in base alle opzioni selezionate. Contattaci per maggiori dettagli.", open: false },
-  { question: "Posso ottenere un rimborso?", answer: "I rimborsi sono disponibili secondo le nostre condizioni di servizio.", open: false },
-  { question: "Come posso contattare l'assistenza clienti?", answer: "Puoi contattarci tramite email o il nostro supporto chat disponibile 24/7.", open: false },
-  { question: "Quanto tempo ci vuole per ricevere una conferma di prenotazione?", answer: "Di solito la conferma avviene entro pochi minuti, ma in alcuni casi può richiedere fino a 24 ore.", open: false },
-  { question: "Ci sono offerte speciali o sconti disponibili?", answer: "Sì, offriamo sconti per gruppi e promozioni stagionali. Controlla la nostra pagina delle offerte.", open: false },
-  { question: "Posso modificare o cancellare la mia prenotazione?", answer: "Sì, puoi modificare o cancellare la tua prenotazione seguendo le condizioni specificate nella conferma.", open: false },
-  { question: "Come posso pagare?", answer: "Accettiamo pagamenti con carta di credito, PayPal e bonifico bancario.", open: false },
-  { question: "I vostri servizi sono disponibili in tutto il mondo?", answer: "Attualmente operiamo in diverse destinazioni. Contattaci per sapere se copriamo la tua area.", open: false },
-  { question: "Quali documenti sono necessari per la prenotazione?", answer: "Dipende dalla destinazione e dal tipo di servizio. Ti forniremo tutte le informazioni necessarie al momento della prenotazione.", open: false },
-  { question: "È sicuro prenotare tramite il vostro sito?", answer: "Sì, utilizziamo tecnologie di sicurezza avanzate per proteggere i tuoi dati e transazioni.", open: false },
-  { question: "Posso regalare un viaggio o un’esperienza?", answer: "Sì, offriamo voucher regalo personalizzabili.", open: false }
-]);
+const { t, locale } = useI18n();
+
+const faqs = ref([]);
+
+const updateFaqs = () => {
+  faqs.value = [
+    { question: t('faq.questions.q1.question'), answer: t('faq.questions.q1.answer'), open: false },
+    { question: t('faq.questions.q2.question'), answer: t('faq.questions.q2.answer'), open: false },
+    { question: t('faq.questions.q3.question'), answer: t('faq.questions.q3.answer'), open: false },
+    { question: t('faq.questions.q4.question'), answer: t('faq.questions.q4.answer'), open: false },
+    { question: t('faq.questions.q5.question'), answer: t('faq.questions.q5.answer'), open: false },
+    { question: t('faq.questions.q6.question'), answer: t('faq.questions.q6.answer'), open: false },
+    { question: t('faq.questions.q7.question'), answer: t('faq.questions.q7.answer'), open: false },
+    { question: t('faq.questions.q8.question'), answer: t('faq.questions.q8.answer'), open: false },
+    { question: t('faq.questions.q9.question'), answer: t('faq.questions.q9.answer'), open: false },
+    { question: t('faq.questions.q10.question'), answer: t('faq.questions.q10.answer'), open: false },
+    { question: t('faq.questions.q11.question'), answer: t('faq.questions.q11.answer'), open: false },
+    { question: t('faq.questions.q12.question'), answer: t('faq.questions.q12.answer'), open: false }
+  ];
+};
+
+watch(locale, updateFaqs, { immediate: true });
 
 const toggleFAQ = (index) => {
   faqs.value[index].open = !faqs.value[index].open;

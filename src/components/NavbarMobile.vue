@@ -16,23 +16,18 @@
       </div>
     </div>
     <div :class="['navbar-items', { 'expanded': isNavbarExpanded }]">
-      <router-link class="page-link" to="/" :hidden="!isNavbarExpanded" @click="toggleNavbar">Home</router-link>
-      <router-link class="page-link" to="/team" :hidden="!isNavbarExpanded" @click="toggleNavbar">Team</router-link>
-      <router-link class="page-link" to="/faq" :hidden="!isNavbarExpanded" @click="toggleNavbar">FAQ</router-link>
-      <router-link class="page-link" to="/quiz" :hidden="!isNavbarExpanded" @click="toggleNavbar">Dicci la
-        tua</router-link>
-      <div class="dropdown">
-        <select class="language-selector" :hidden="!isNavbarExpanded">
-          <option value="en">English (EN)</option>
-          <option value="it">Italiano (IT)</option>
-          <!-- Add more languages if needed -->
-        </select>
-        <div class="dropdown-content">
-          <a href="#">English (EN)</a>
-          <a href="#">Italiano (IT)</a>
-          <!-- Add more languages if needed -->
-        </div>
-      </div>
+      <router-link class="page-link" to="/" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.home')
+      }}</router-link>
+      <router-link class="page-link" to="/team" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.team')
+      }}</router-link>
+      <router-link class="page-link" to="/faq" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.faq')
+      }}</router-link>
+      <router-link class="page-link" to="/quiz" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.quiz')
+      }}</router-link>
+      <select v-model="locale" class="language-selector">
+        <option value="en">{{ t('navbar.language.en') }}</option>
+        <option value="it">{{ t('navbar.language.it') }}</option>
+      </select>
     </div>
   </nav>
 </template>
@@ -40,6 +35,9 @@
 <script setup lang="ts">
 import Logo from './ui/Logo.vue';
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { locale, t } = useI18n();
 
 const isNavbarExpanded = ref(false);
 

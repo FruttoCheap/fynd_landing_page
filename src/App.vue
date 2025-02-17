@@ -5,13 +5,12 @@ import NavbarMobile from "./components/NavbarMobile.vue";
 
 <template>
   <div class="hidden md:block">
-    <Navbar/>
+    <Navbar />
   </div>
   <div class="md:hidden">
-    <NavbarMobile/>
+    <NavbarMobile />
   </div>
   <router-view></router-view>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
