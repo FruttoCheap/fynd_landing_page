@@ -11,8 +11,8 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="flex flex-col md:flex-row relative">
-    <div class="flex flex-col bg-transparent h-full z-20">
+  <div class="flex md:flex-row">
+    <div class="h-full">
       <div
         class="no-select flex flex-col font-bold text-4xl sm:text-5xl md:text-7xl text-center md:text-left p-6 sm:p-12">
         <div>
@@ -35,7 +35,7 @@ const { t } = useI18n();
       </div>
     </div>
     <div
-      class="flex-1 mt-12 hidden xl:flex motion-opacity-in-0 motion-translate-y-in-50 motion-duration-[1s] motion-ease-spring-smooth">
+      class="flex-1 mt-12 hidden lg:flex z-40 motion-opacity-in-0 motion-translate-y-in-50 motion-duration-[1s] motion-ease-spring-smooth">
       <img src="../assets/imgs/travel_hero.png" alt="Hero Image of a travelling man"
         class="object-cover transition duration-300 ease-in-out hover:drop-shadow-2xl">
     </div>
