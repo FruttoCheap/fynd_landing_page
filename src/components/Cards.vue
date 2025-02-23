@@ -54,7 +54,7 @@ const { t } = useI18n();
 }
 
 .parallax-beach {
-  background-image: url('src/assets/imgs/cards/beach_resize.png');
+  background-image: url('../assets/imgs/cards/beach_resize.png');
   height: 50vh;
   display: flex;
   width: 100%;
@@ -75,7 +75,7 @@ const { t } = useI18n();
 }
 
 .parallax-mountain {
-  background-image: url('src/assets/imgs/cards/mountain_resize.png');
+  background-image: url('../assets/imgs/cards/mountain_resize.png');
   height: 50vh;
   display: flex;
   width: 100%;
@@ -96,7 +96,7 @@ const { t } = useI18n();
 }
 
 .parallax-city {
-  background-image: url('src/assets/imgs/cards/city_resize.png');
+  background-image: url('../assets/imgs/cards/city_resize.png');
   height: 50vh;
   display: flex;
   width: 100%;
