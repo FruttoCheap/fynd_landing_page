@@ -15,7 +15,8 @@
       <!-- Founders -->
       <div class="flex flex-col md:flex-row gap-8 mb-16 items-center justify-center">
         <div v-for="founder in founders" :key="founder.id" @mouseenter="founder.onEnter" @mouseleave="founder.onLeave"
-          class="hover:shadow-2xl cardina group p-8 rounded-xl duration-300 transition-all mx-12 md:mx-0 max-w-xs">
+          class="hover:shadow-2xl cardina group p-8 rounded-xl duration-300 transition-all mx-12 md:mx-0 max-w-xs"
+          :data-member-id="founder.id">
           <img :src="founder.pic" :alt="founder.name" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
           <h3 class="text-xl font-semibold">{{ founder.name }}</h3>
           <p class="text-sm text-gray-500">{{ founder.role }}</p>
@@ -43,7 +44,8 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full md:w-3/4 mx-auto mb-24">
         <div v-for="collaborator in collaborators" :key="collaborator.id" @mouseenter="collaborator.onEnter"
           @mouseleave="collaborator.onLeave"
-          class="hover:shadow-2xl cardina group border border-transparent p-8 rounded-xl duration-300 transition-all mx-12 md:mx-0">
+          class="hover:shadow-2xl cardina group border border-transparent p-8 rounded-xl duration-300 transition-all mx-12 md:mx-0"
+          :data-member-id="collaborator.id">
           <img :src="collaborator.pic" :alt="collaborator.name"
             class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
           <h3 class="text-lg font-semibold">{{ collaborator.name }}</h3>
@@ -87,17 +89,86 @@ const { t, locale } = useI18n();
 const founders = ref([]);
 const collaborators = ref([]);
 
+const currentlyVisible = ref('');
+const observers = new Map();
+
+const handleIntersection = (entries) => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute('data-member-id');
+    if (entry.isIntersecting) {
+      currentlyVisible.value = id;
+    }
+  });
+};
+
 const updateTeam = () => {
   founders.value = [
-    { id: 1, name: "Andrea Villa", role: "CEO", description: t('team.founders.andrea.description'), pic: andreaImage, linkedin: "https://www.linkedin.com/in/andrea-villa-9239a6268/", email: "mailto:and.vil.2001@gmail.com", onEnter: () => isHovering.value.andrea = true, onLeave: () => isHovering.value.andrea = false },
-    { id: 2, name: "Giulio Desana", role: "CTO", description: t('team.founders.giulio.description'), pic: giulioImage, linkedin: "www.linkedin.com/in/giulio-desana", email: "mailto:desanagiulio@gmail.com", onEnter: () => isHovering.value.giulio = true, onLeave: () => isHovering.value.giulio = false },
-    { id: 3, name: "Marco Pinto", role: "COO", description: t('team.founders.marco.description'), pic: marcoImage, linkedin: "https://www.linkedin.com/in/pinto-marco/", email: "mailto:marcopinto01@icloud.com", onEnter: () => isHovering.value.marco = true, onLeave: () => isHovering.value.marco = false }
+    {
+      id: 'andrea',
+      name: "Andrea Villa",
+      role: "CEO",
+      description: t('team.founders.andrea.description'),
+      pic: andreaImage,
+      linkedin: "https://www.linkedin.com/in/andrea-villa-9239a6268/",
+      email: "mailto:and.vil.2001@gmail.com",
+      onEnter: () => isHovering.value.andrea = true,
+      onLeave: () => isHovering.value.andrea = false
+    },
+    {
+      id: 'giulio',
+      name: "Giulio Desana",
+      role: "CTO",
+      description: t('team.founders.giulio.description'),
+      pic: giulioImage,
+      linkedin: "www.linkedin.com/in/giulio-desana",
+      email: "mailto:desanagiulio@gmail.com",
+      onEnter: () => isHovering.value.giulio = true,
+      onLeave: () => isHovering.value.giulio = false
+    },
+    {
+      id: 'marco',
+      name: "Marco Pinto",
+      role: "COO",
+      description: t('team.founders.marco.description'),
+      pic: marcoImage,
+      linkedin: "https://www.linkedin.com/in/pinto-marco/",
+      email: "mailto:marcopinto01@icloud.com",
+      onEnter: () => isHovering.value.marco = true,
+      onLeave: () => isHovering.value.marco = false
+    }
   ];
 
   collaborators.value = [
-    { id: 4, name: "Giorgio Francone", role: "Commercialista", description: t('team.collaborators.giorgio.description'), pic: giorgioImage, onEnter: () => isHovering.value.giorgio = true, onLeave: () => isHovering.value.giorgio = false },
-    { id: 5, name: "Federica Fino", role: "Product Management", description: t('team.collaborators.federica.description'), pic: fedeImage, linkedin: "https://www.linkedin.com/in/federica-fino-0641786/", onEnter: () => isHovering.value.federica = true, onLeave: () => isHovering.value.federica = false },
-    { id: 6, name: "Edoardo Morone", role: "Designer", description: t('team.collaborators.edoardo.description'), pic: edoImage, linkedin: "https://www.linkedin.com/in/edoardo-morone-74910419a/", instagram: "https://www.instagram.com/edomorone?igsh=MjVwaXptajB1YW04", onEnter: () => isHovering.value.edoardo = true, onLeave: () => isHovering.value.edoardo = false }
+    {
+      id: 'giorgio',
+      name: "Giorgio Francone",
+      role: "Commercialista",
+      description: t('team.collaborators.giorgio.description'),
+      pic: giorgioImage,
+      onEnter: () => isHovering.value.giorgio = true,
+      onLeave: () => isHovering.value.giorgio = false
+    },
+    {
+      id: 'federica',
+      name: "Federica Fino",
+      role: "Product Management",
+      description: t('team.collaborators.federica.description'),
+      pic: fedeImage,
+      linkedin: "https://www.linkedin.com/in/federica-fino-0641786/",
+      onEnter: () => isHovering.value.federica = true,
+      onLeave: () => isHovering.value.federica = false
+    },
+    {
+      id: 'edoardo',
+      name: "Edoardo Morone",
+      role: "Designer",
+      description: t('team.collaborators.edoardo.description'),
+      pic: edoImage,
+      linkedin: "https://www.linkedin.com/in/edoardo-morone-74910419a/",
+      instagram: "https://www.instagram.com/edomorone?igsh=MjVwaXptajB1YW04",
+      onEnter: () => isHovering.value.edoardo = true,
+      onLeave: () => isHovering.value.edoardo = false
+    }
   ];
 };
 
@@ -127,10 +198,15 @@ const colors = {
   'andrea': '#dc2626',
   'giulio': '#a855f7',
   'marco': '#15803d',
-  'giorgio': '#fb923c',
-  'federica': '#fb923c',
-  'edoardo': '#fb923c'
+  'giorgio': '#fbbf24',
+  'federica': '#1d4ed8',
+  'edoardo': '#14b8a6'
 };
+
+// Aggiungi queste variabili dopo le dichiarazioni esistenti
+let lastTouchY = 0;
+let touchVelocity = 0;
+const isMobile = ref(window.innerWidth <= 768);
 
 // draw a grid of dots on the canvas which will cover the whole page
 const drawDots = () => {
@@ -141,13 +217,13 @@ const drawDots = () => {
 
   let width = document.documentElement.clientWidth;
   const height = window.innerHeight;
-  const baseSize = 1;
+  const baseSize = 0.5;
   const gap = 25;
-  const maxDistance = 100; // Distanza massima di influenza del cursore
+  const maxDistance = 200; // Distanza massima di influenza del cursore
 
-  if (width > 1280) {
-    width = 1280;
-  }
+  // if (width > 1280) {
+  //   width = 1280;
+  // }
 
   canvas.value.width = width;
   canvas.value.height = height;
@@ -173,7 +249,14 @@ const drawDots = () => {
     if (distance < maxDistance) {
       // Aumenta la dimensione fino a 5 volte quando il punto è vicino al cursore
       const scale = 1 - (distance / maxDistance);
-      size = baseSize + (scale * 4);
+
+      // Aumenta l'effetto in base alla velocità del touch su mobile
+      if (isMobile.value && touchVelocity !== 0) {
+        const velocityFactor = Math.min(Math.abs(touchVelocity) / 10, 2);
+        size = baseSize + (scale * 6 * velocityFactor);
+      } else {
+        size = baseSize + (scale * 6);
+      }
     }
 
     ctx.beginPath();
@@ -186,15 +269,26 @@ const drawDots = () => {
   animationFrameId = requestAnimationFrame(drawDots);
 };
 
+// Modifica la funzione handleMouseMove per gestire anche il touch
 function handleMouseMove(e) {
   if (!canvas.value) return;
 
-  // Aggiorna il rettangolo del canvas ad ogni movimento del mouse
   canvasRect = canvas.value.getBoundingClientRect();
 
-  // Calcola la posizione del mouse relativa al canvas, considerando lo scroll
-  mouseX = e.clientX - canvasRect.left;
-  mouseY = e.clientY - canvasRect.top + window.scrollY / 100;
+  // Se è un evento touch, usa le coordinate del touch
+  if (e.touches) {
+    const touch = e.touches[0];
+    mouseX = touch.clientX - canvasRect.left;
+    mouseY = touch.clientY - canvasRect.top + window.scrollY / 100;
+
+    // Calcola la velocità dello scroll
+    touchVelocity = touch.clientY - lastTouchY;
+    lastTouchY = touch.clientY;
+  } else {
+    mouseX = e.clientX - canvasRect.left;
+    mouseY = e.clientY - canvasRect.top + window.scrollY / 100;
+    touchVelocity = 0;
+  }
 }
 
 function handleResize() {
@@ -215,6 +309,9 @@ function initCanvas() {
     document.body.scrollHeight
   );
 
+  mouseX = canvas.value.width / 2;
+  mouseY = canvas.value.height / 2;
+
   ctx = canvas.value.getContext('2d');
   canvasRect = canvas.value.getBoundingClientRect();
 
@@ -225,7 +322,17 @@ function initCanvas() {
 // draw the dots when the component is mounted
 onMounted(() => {
   initCanvas();
-  window.addEventListener('mousemove', handleMouseMove);
+
+  if (isMobile.value) {
+    window.addEventListener('touchmove', handleMouseMove, { passive: true });
+    window.addEventListener('touchstart', handleMouseMove, { passive: true });
+    window.addEventListener('touchend', () => {
+      touchVelocity = 0;
+    }, { passive: true });
+  } else {
+    window.addEventListener('mousemove', handleMouseMove);
+  }
+
   window.addEventListener('resize', handleResize);
   window.addEventListener('scroll', () => {
     if (canvas.value) {
@@ -237,7 +344,17 @@ onMounted(() => {
 // cleanup the event listeners when the component is unmounted
 onUnmounted(() => {
   cancelAnimationFrame(animationFrameId);
-  window.removeEventListener('mousemove', handleMouseMove);
+
+  if (isMobile.value) {
+    window.removeEventListener('touchmove', handleMouseMove);
+    window.removeEventListener('touchstart', handleMouseMove);
+    window.removeEventListener('touchend', () => {
+      touchVelocity = 0;
+    });
+  } else {
+    window.removeEventListener('mousemove', handleMouseMove);
+  }
+
   window.removeEventListener('resize', handleResize);
   window.removeEventListener('scroll', () => {
     if (canvas.value) {
