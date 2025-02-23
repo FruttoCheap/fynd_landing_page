@@ -6,7 +6,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="flex flex-row px-12 -mt-0 xl:-mt-12">
+  <div class="flex flex-row px-12 mt-24 md:mt-12">
     <div class="flex flex-col">
       <div
         class="font-bold text-2xl sm:text-4xl md:text-6xl md:text-left motion-opacity-in-0 motion-translate-y-in-100 motion-duration-[1s] motion-ease-spring-smooth motion-delay-300">
@@ -19,7 +19,7 @@ const { t } = useI18n();
           <FeatureItem icon="🤖" :text="t('features.item3')" />
         </div>
         <div
-          class="relative flex flex-1 motion-translate-y-in-100 motion-duration-[1s] motion-ease-spring-smooth motion-delay-[700ms] mt-9">
+          class="relative flex flex-1 motion-translate-y-in-100 motion-duration-[1s] motion-ease-spring-smooth motion-delay-[700ms]">
           <div class="absolute -top-24 rounded-3xl bg-white shadow-2xl hidden xl:flex lg:p-6 m-24">
             <img src="../assets/imgs/trip_1.png" alt="Trip to Indonesia" class="object-cover">
           </div>

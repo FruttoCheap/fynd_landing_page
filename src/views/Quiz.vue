@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mx-6">
-      <h1 class="font-bold mt-3 text-left">{{ t('quiz.title') }}</h1>
+      <h1 class="text-4xl md:text-6xl font-bold mt-3 text-left">{{ t('quiz.title') }}</h1>
       <div class="text-xl text-left">
         <br>
         {{ t('quiz.intro1') }} <span class="font-bold">{{ t('quiz.intro2') }}</span>.

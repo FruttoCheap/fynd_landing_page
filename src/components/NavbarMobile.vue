@@ -3,12 +3,8 @@
     <div class="navbar">
       <div class="navbar-left">
         <router-link class="flex justify-center items-center page-link" to="/">
-          <Logo :color="isNavbarExpanded ? 'white' : 'black'" />
+          <Logo :color="isNavbarExpanded" />
         </router-link>
-      </div>
-      <div
-        :class="['navbar-center', 'text-2xl', 'font-bold', 'pe-8', 'duration-300', 'transition-all', { 'text-white': isNavbarExpanded }]">
-        FYND
       </div>
       <div class="navbar-right text-base">
         <i :class="['fas', 'fa-navicon', 'cursor-pointr', 'transition-all', 'duration-300', { 'text-white': isNavbarExpanded }]"
@@ -52,7 +48,7 @@ function toggleNavbar() {
   justify-content: space-between;
   align-items: center;
   justify-items: center;
-  padding: 2rem 3rem;
+  padding: 1rem 3rem;
   color: black;
 }
 
@@ -110,6 +106,7 @@ function toggleNavbar() {
 
 .language-selector {
   margin-right: 20px;
+  margin-top: 2rem;
   padding: 10px;
   /* Increased padding */
   background-color: transparent;

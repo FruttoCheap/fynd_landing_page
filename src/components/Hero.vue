@@ -11,8 +11,8 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="flex md:flex-row">
-    <div class="h-full">
+  <div class="flex flex-col md:flex-row relative">
+    <div class="flex flex-col justify-center md:justify-start items-center md:items-start h-full z-20">
       <div
         class="no-select flex flex-col font-bold text-4xl sm:text-5xl md:text-7xl text-center md:text-left p-6 sm:p-12">
         <div>
@@ -24,18 +24,23 @@ const { t } = useI18n();
         <span><span class="text-orange-400">{{ t('hero.experience') }}</span></span>
       </div>
       <div
-        class="flex flex-col justify-center md:justify-start md:flex-row gap-8 px-[15%] sm:px-36 md:px-12 mb-12 mt-6 motion-opacity-in-0 motion-translate-y-in-100 motion-duration-[1s] motion-ease-spring-smooth">
+        class="flex md:hidden max-w-sm motion-opacity-in-0 motion-translate-y-in-50 motion-duration-[1s] motion-ease-spring-smooth">
+        <img src="../assets/imgs/travel_hero.png" alt="Hero Image of a travelling man"
+          class="object-cover transition duration-300 ease-in-out hover:drop-shadow-2xl">
+      </div>
+      <div
+        class="flex flex-col w-full justify-center md:justify-start md:flex-row gap-8 px-[15%] sm:px-36 md:px-12 mb-12 -mt-10 md:mt-6 motion-opacity-in-0 motion-translate-y-in-100 motion-duration-[1s] motion-ease-spring-smooth">
         <ActionButton :text="t('heroButton.becomeFynder')"
           buttonClass="bg-orange-400 text-sm sm:text-base text-white font-semibold"
           @click="props.onScrollToLastSection" />
-        <router-link to="/quiz" class="flex justify-center">
+        <router-link to="/quiz" class="justify-center hidden md:flex">
           <ActionButton :text="t('heroButton.tellUs')"
             buttonClass="border-2 border-orange-400 text-sm sm:text-base text-black font-semibold" />
         </router-link>
       </div>
     </div>
     <div
-      class="flex-1 mt-12 hidden lg:flex z-40 motion-opacity-in-0 motion-translate-y-in-50 motion-duration-[1s] motion-ease-spring-smooth">
+      class="absolute w-1/2 max-w-[45vw] right-0 mt-12 hidden lg:flex motion-opacity-in-0 motion-translate-y-in-50 motion-duration-[1s] motion-ease-spring-smooth">
       <img src="../assets/imgs/travel_hero.png" alt="Hero Image of a travelling man"
         class="object-cover transition duration-300 ease-in-out hover:drop-shadow-2xl">
     </div>
