@@ -7,9 +7,9 @@
         <div
           class="parallax-beach no-select flex flex-col justify-between items-stretch rounded-3xl text-2xl text-white font-semibold">
           <div v-html="t('cards.card1.mainText')" class="z-20 card-content"></div>
-          <router-link to="/fynder">
-            <ActionButton text="t('cards.card1.buttonText')"
-              buttonClass="bg-orange-400 text-sm sm:text-base text-white font-semibold" />
+          <router-link to="/fynder" class="z-20 card-button">
+            <ActionButton :text="t('cards.card1.buttonText')"
+              buttonClass="bg-orange-400 text-sm sm:text-base text-white font-semibold z-20" />
           </router-link>
         </div>
       </div>
@@ -36,6 +36,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
 import { ref } from 'vue'
+import ActionButton from "./ui/ActionButton.vue";
 
 const isMobile = ref(false)
 
@@ -120,5 +121,10 @@ const { t } = useI18n();
   padding: 3rem;
   backdrop-filter: brightness(0.6);
   height: 100%;
+}
+
+.card-button {
+  padding: 3rem;
+  backdrop-filter: brightness(0.6);
 }
 </style>

@@ -239,7 +239,7 @@ const messages = {
             destination: "destinazione",
             introLine2: "non",
             introLine3: "è un luogo...",
-            startExperience: " l'inizio della tua",
+            startExperience: "è l'inizio della tua",
             experience: "esperienza"
         },
         navbar: {

@@ -5,13 +5,13 @@
     <Iphone />
     <Cards />
     <QuizSection />
-    <section ref="email">
+    <div ref="email">
       <Email />
-    </section>
+    </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import Hero from '../components/Hero.vue';
 import Features from "../components/Features.vue";
@@ -20,7 +20,7 @@ import QuizSection from "../components/QuizSection.vue";
 import Email from "../components/Email.vue";
 import Iphone from '../components/Iphone.vue';
 
-const email = ref < HTMLElement | null > (null);
+const email = ref<HTMLElement | null>(null);
 
 function scrollToLastSection() {
   email.value?.scrollIntoView({ behavior: 'smooth' });
@@ -30,5 +30,6 @@ function scrollToLastSection() {
 <style scoped>
 .home-container {
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 </style>
