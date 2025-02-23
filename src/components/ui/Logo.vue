@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col relative justify-center align-center items-center w-full">
+    <div class="flex flex-col relative justify-center align-center items-center w-full ps-3">
         <img v-if="color" src="../../assets/imgs/logo_white.png" alt="Fynd Logo"
             class="w-20 h-20 object-contain motion-preset-fade-md" />
         <img v-else src="../../assets/imgs/logo_black.png" alt="Fynd Logo"

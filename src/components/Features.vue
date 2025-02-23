@@ -6,7 +6,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="flex flex-row px-12 mt-24 md:mt-12">
+  <div class="flex flex-row px-12 mt-6 md:mt-12">
     <div class="flex flex-col">
       <div
         class="font-bold text-2xl sm:text-4xl md:text-6xl md:text-left motion-opacity-in-0 motion-translate-y-in-100 motion-duration-[1s] motion-ease-spring-smooth motion-delay-300">

@@ -2,7 +2,8 @@
   <nav class="flex flex-col">
     <div class="navbar">
       <div class="navbar-left">
-        <router-link class="flex justify-center items-center page-link" to="/">
+        <router-link class="flex justify-center items-center page-link" to="/"
+          @click="isNavbarExpanded ? toggleNavbar() : null">
           <Logo :color="isNavbarExpanded" />
         </router-link>
       </div>
@@ -13,13 +14,13 @@
     </div>
     <div :class="['navbar-items', { 'expanded': isNavbarExpanded }]">
       <router-link class="page-link" to="/" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.home')
-      }}</router-link>
+        }}</router-link>
       <router-link class="page-link" to="/team" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.team')
-      }}</router-link>
+        }}</router-link>
       <router-link class="page-link" to="/faq" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.faq')
-      }}</router-link>
+        }}</router-link>
       <router-link class="page-link" to="/quiz" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.quiz')
-      }}</router-link>
+        }}</router-link>
       <select v-model="locale" class="language-selector">
         <option value="en">{{ t('navbar.language.en') }}</option>
         <option value="it">{{ t('navbar.language.it') }}</option>

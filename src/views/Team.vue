@@ -277,13 +277,8 @@ function handleMouseMove(e) {
 
   // Se è un evento touch, usa le coordinate del touch
   if (e.touches) {
-    const touch = e.touches[0];
-    mouseX = touch.clientX - canvasRect.left;
-    mouseY = touch.clientY - canvasRect.top + window.scrollY / 100;
-
-    // Calcola la velocità dello scroll
-    touchVelocity = touch.clientY - lastTouchY;
-    lastTouchY = touch.clientY;
+    mouseX = -500
+    mouseY = -500
   } else {
     mouseX = e.clientX - canvasRect.left;
     mouseY = e.clientY - canvasRect.top + window.scrollY / 100;

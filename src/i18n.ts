@@ -43,7 +43,7 @@ const messages = {
         cards: {
             card1: {
                 mainText: "Discover what<span class='text-4xl font-bold'><br>FYNDER<br></span>you are",
-                buttonText: "Discover"
+                buttonText: "Fynd Yourself"
             },
             card2: {
                 mainText: "<span class='text-4xl font-bold'>FYND</span><br>generates the perfect itinerary for you"

@@ -1,10 +1,11 @@
 <template>
-  <div ref="container" class="flex flex-row flex-wrap justify-between -mt-20 sm:-mt-24 md:-mt-32 lg:-mt-40 xl:-mt-40"
+  <div ref="container"
+    class="flex flex-row flex-wrap max-h-[200vh] justify-between -mt-20 sm:-mt-24 md:-mt-32 lg:-mt-40 xl:-mt-40"
     :style="{ marginTop: isMobile ? '-18rem' : NaN }">
     <Card backgroundClass="background-image-div1" :mainText="t('cards.card1.mainText')"
       :buttonText="t('cards.card1.buttonText')" />
-    <Card backgroundClass="background-image-div2" :mainText="t('cards.card2.mainText')" />
-    <Card backgroundClass="background-image-div3" :mainText="t('cards.card3.mainText')" />
+    <Card backgroundClass="background-image-div2" :mainText="t('cards.card2.mainText')" buttonText="" />
+    <Card backgroundClass="background-image-div3" :mainText="t('cards.card3.mainText')" buttonText="" />
   </div>
 </template>
 
