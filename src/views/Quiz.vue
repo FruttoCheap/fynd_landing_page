@@ -148,7 +148,7 @@
       </div>
 
       <label for="email" class="title">{{ t('quiz.email') }}</label>
-      <input type="email" v-model="form.Email" id="email" required />
+      <input type="email" v-model="form.Email" id="email" class="bg-white" placeholder="Email..." />
 
       <div v-if="responseMessage" style="margin-top: 20px; color: green;" class="text-left">
         {{ responseMessage }}

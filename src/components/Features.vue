@@ -20,11 +20,8 @@ const { t } = useI18n();
         </div>
         <div
           class="relative flex flex-1 motion-translate-y-in-100 motion-duration-[1s] motion-ease-spring-smooth motion-delay-[700ms]">
-          <div class="absolute -top-24 rounded-3xl bg-white shadow-2xl hidden xl:flex lg:p-6 m-24">
-            <img src="../assets/imgs/trip_1.png" alt="Trip to Indonesia" class="object-cover">
-          </div>
-          <div class="absolute top-40 left-44 rounded-2xl bg-white shadow-2xl p-3 hidden xl:flex xl:m-6 w-1/2">
-            <img src="../assets/imgs/trip_2.png" alt="Trip to Indonesia" class="object-cover z-20" style="scale: 0.9;">
+          <div class="hidden lg:flex lg:p-6">
+            <img src="../assets/imgs/features.png" alt="Trip to Indonesia" class="object-contain">
           </div>
         </div>
       </div>

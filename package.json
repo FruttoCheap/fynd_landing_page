@@ -10,9 +10,14 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "@splinetool/runtime": "^1.9.69",
+    "@tresjs/cientos": "^4.1.0",
+    "@tresjs/core": "^4.3.3",
+    "three": "^0.173.0",
     "vue": "^3.5.13",
     "vue-i18n": "^11.1.1",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.0.13",
+    "vue3-spline": "^1.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",

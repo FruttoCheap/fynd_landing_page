@@ -2,18 +2,18 @@
   <nav class="navbar">
     <div class="navbar-left">
       <router-link class="flex flex-row page-link items-center" to="/">
-        <Logo class="logo" color="#000000" />
+        <Logo class="logo" :color=false />
       </router-link>
     </div>
     <div class="navbar-center text-base">
       <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/' }" to="/">{{ t('navbar.home')
-        }}</router-link>
+      }}</router-link>
       <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/team' }" to="/team">{{
         t('navbar.team') }}</router-link>
       <router-link class="page-link border-e pe-6" :class="{ active: $route.path === '/faq' }" to="/faq">{{
         t('navbar.faq') }}</router-link>
       <router-link class="page-link" :class="{ active: $route.path === '/quiz' }" to="/quiz">{{ t('navbar.quiz')
-        }}</router-link>
+      }}</router-link>
     </div>
     <div class="navbar-right text-base">
       <select v-model="locale" class="language-selector">

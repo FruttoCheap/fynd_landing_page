@@ -10,7 +10,7 @@ import NavbarMobile from "./components/NavbarMobile.vue";
   <div class="md:hidden">
     <NavbarMobile />
   </div>
-  <router-view></router-view>
+  <router-view class="max-w-[100vw]"></router-view>
 </template>
 
 <style scoped></style>
