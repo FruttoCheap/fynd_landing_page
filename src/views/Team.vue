@@ -54,15 +54,15 @@ const collaborators = ref([]);
 
 const updateTeam = () => {
   founders.value = [
-    { id: 1, name: "Andrea Villa", role: "CEO", description: t('team.founders.andrea.description'), pic: andreaImage },
-    { id: 2, name: "Giulio Desana", role: "CTO", description: t('team.founders.giulio.description'), pic: giulioImage },
-    { id: 3, name: "Marco Pinto", role: "COO", description: t('team.founders.marco.description'), pic: marcoImage }
+    { id: 1, name: "Andrea Villa", role: "CEO", description: t('team.founders.andrea.description'), pic: andreaImage, linkedin: "https://www.linkedin.com/in/andrea-villa-9239a6268/" },
+    { id: 2, name: "Giulio Desana", role: "CTO", description: t('team.founders.giulio.description'), pic: giulioImage, linkedin: "www.linkedin.com/in/giulio-desana" },
+    { id: 3, name: "Marco Pinto", role: "COO", description: t('team.founders.marco.description'), pic: marcoImage, linkedin: "https://www.linkedin.com/in/pinto-marco/" }
   ];
 
   collaborators.value = [
     { id: 4, name: "Giorgio Francone", role: "Commercialista", description: t('team.collaborators.giorgio.description'), pic: giorgioImage },
-    { id: 5, name: "Federica Fino", role: "Product Management", description: t('team.collaborators.federica.description'), pic: fedeImage },
-    { id: 6, name: "Edoardo Morone", role: "Designer", description: t('team.collaborators.edoardo.description'), pic: edoImage }
+    { id: 5, name: "Federica Fino", role: "Product Management", description: t('team.collaborators.federica.description'), pic: fedeImage, linkedin: "https://www.linkedin.com/in/federica-fino-0641786/" },
+    { id: 6, name: "Edoardo Morone", role: "Designer", description: t('team.collaborators.edoardo.description'), pic: edoImage, linkedin: "https://www.linkedin.com/in/edoardo-morone-74910419a/" }
   ];
 };
 
