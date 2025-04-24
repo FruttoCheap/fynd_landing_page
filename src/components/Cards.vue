@@ -1,6 +1,5 @@
 <template>
-  <div ref="container"
-    class="flex flex-row flex-wrap max-h-[200vh] justify-between -mt-20 sm:-mt-24 md:-mt-32 lg:-mt-40 xl:-mt-40"
+  <div ref="container" class="flex flex-row flex-wrap max-h-[200vh] justify-between -mt-10"
     :style="{ marginTop: isMobile ? '-18rem' : NaN }">
     <div class="flex flex-1 p-12">
       <div class="parallax-container rounded-3xl">

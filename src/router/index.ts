@@ -4,6 +4,7 @@ import Team from '../views/Team.vue';
 import FAQ from '../views/Faq.vue';
 import Quiz from '../views/Quiz.vue';
 import Fynder from '../views/Fynder.vue';
+import Test from '../views/Test.vue';
 
 const routes = [
   { path: '/', component: Home },
@@ -11,6 +12,7 @@ const routes = [
   { path: '/faq', component: FAQ },
   { path: '/quiz', component: Quiz },
   { path: '/fynder', component: Fynder },
+  { path: '/test', component: Test }
 ];
 
 const router = createRouter({
