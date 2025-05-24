@@ -6,22 +6,23 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="bg-white border border-orange-400 p-6 rounded-3xl shadow-md text-center mx-12 mt-24">
+  <div class="p-6 mx-12 mt-24 text-center bg-white rounded-3xl border border-orange-400 shadow-md">
     <div
-      class="relative flex justify-start bg-white border border-orange-400 py-3 px-9 rounded-2xl shadow-xl shadow-black-600 -mt-12 max-w-2xl">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 z-20">{{ t('quizSection.title') }}</h2>
+      class="flex relative justify-start px-9 py-3 -mt-12 max-w-2xl bg-white rounded-2xl border border-orange-400 shadow-xl shadow-black-600">
+      <h2 class="z-20 text-3xl font-bold text-gray-900 md:text-4xl">{{ t('quizSection.title') }}</h2>
     </div>
-    <div class="flex flex-col md:flex-row md:gap-8 justify-center items-center mt-6">
+    <div class="flex flex-col justify-center items-center mt-6 md:flex-row md:gap-8">
       <div class="flex w-4/5">
-        <p class="no-select text-gray-700 text-base font-semibold md:text-left md:ms-6">
+        <p class="text-base font-semibold text-gray-700 no-select md:text-left md:ms-6">
           {{ t('quizSection.description') }}
         </p>
       </div>
-      <div class="flex flex-row justify-center mt-6 md:mt-0 w-full md:w-1/3">
-        <router-link to="/quiz" class="flex justify-center w-full px-auto">
+      <div class="flex flex-row justify-center mt-6 w-full md:mt-0 md:w-1/3">
+        <a class="flex justify-center w-full px-auto"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSe2sNgVieErAnJrV-sVBkSCQosiq7cqcAohAfpf_OGYdTxX6A/viewform?usp=header">
           <ActionButton :text="t('quizSection.buttonText')"
             buttonClass="bg-orange-400 text-sm sm:text-base text-white font-semibold w-1/2 md:w-auto" />
-        </router-link>
+        </a>
       </div>
     </div>
   </div>
