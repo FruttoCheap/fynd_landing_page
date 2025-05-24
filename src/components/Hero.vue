@@ -37,7 +37,7 @@ const { t } = useI18n();
           <ActionButton :text="t('heroButton.tellUs')"
             buttonClass="border-2 border-orange-400 text-sm sm:text-base text-black font-semibold" />
         </router-link> -->
-        <a class="hidden justify-center md:flex"
+        <a class="justify-center md:flex"
           href="https://docs.google.com/forms/d/e/1FAIpQLSe2sNgVieErAnJrV-sVBkSCQosiq7cqcAohAfpf_OGYdTxX6A/viewform?usp=header">
           <ActionButton :text="t('heroButton.tellUs')"
             buttonClass="border-2 border-orange-400 text-sm sm:text-base text-black font-semibold" />
