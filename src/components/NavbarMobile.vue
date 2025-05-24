@@ -7,7 +7,7 @@
           <Logo :color="isNavbarExpanded" />
         </router-link>
       </div>
-      <div class="navbar-right text-base">
+      <div class="text-base navbar-right">
         <i :class="['fas', 'fa-navicon', 'cursor-pointr', 'transition-all', 'duration-300', { 'text-white': isNavbarExpanded }]"
           @click="toggleNavbar"></i>
       </div>
@@ -19,8 +19,11 @@
         }}</router-link>
       <router-link class="page-link" to="/faq" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.faq')
         }}</router-link>
-      <router-link class="page-link" to="/quiz" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.quiz')
-        }}</router-link>
+      <!-- <router-link class="page-link" to="/quiz" :hidden="!isNavbarExpanded" @click="toggleNavbar">{{ t('navbar.quiz')
+        }}</router-link> -->
+      <a class="page-link" :hidden="!isNavbarExpanded"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSe2sNgVieErAnJrV-sVBkSCQosiq7cqcAohAfpf_OGYdTxX6A/viewform?usp=header">
+        {{ t('navbar.quiz') }}</a>
       <select v-model="locale" class="language-selector">
         <option value="en">{{ t('navbar.language.en') }}</option>
         <option value="it">{{ t('navbar.language.it') }}</option>
