@@ -11,10 +11,10 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="flex flex-col md:flex-row relative">
-    <div class="flex flex-col justify-center md:justify-start items-center md:items-start h-full z-20">
+  <div class="flex relative flex-col md:flex-row">
+    <div class="flex z-20 flex-col justify-center items-center h-full md:justify-start md:items-start">
       <div
-        class="no-select flex flex-col font-bold text-4xl sm:text-5xl md:text-7xl text-center md:text-left p-6 sm:p-12">
+        class="flex flex-col p-6 text-4xl font-bold text-center no-select sm:text-5xl md:text-7xl md:text-left sm:p-12">
         <div>
           {{ t('hero.introLine1') }} <br>
           <span class="text-orange-400">{{ t('hero.destination') }}</span> {{ t('hero.introLine2') }}<br>
@@ -33,10 +33,15 @@ const { t } = useI18n();
         <ActionButton :text="t('heroButton.becomeFynder')"
           buttonClass="bg-orange-400 text-sm sm:text-base text-white font-semibold"
           @click="props.onScrollToLastSection" />
-        <router-link to="/quiz" class="justify-center hidden md:flex">
+        <!-- <router-link to="/quiz" class="hidden justify-center md:flex">
           <ActionButton :text="t('heroButton.tellUs')"
             buttonClass="border-2 border-orange-400 text-sm sm:text-base text-black font-semibold" />
-        </router-link>
+        </router-link> -->
+        <a class="hidden justify-center md:flex"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSe2sNgVieErAnJrV-sVBkSCQosiq7cqcAohAfpf_OGYdTxX6A/viewform?usp=header">
+          <ActionButton :text="t('heroButton.tellUs')"
+            buttonClass="border-2 border-orange-400 text-sm sm:text-base text-black font-semibold" />
+        </a>
       </div>
     </div>
     <div
