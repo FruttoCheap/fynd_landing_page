@@ -41,7 +41,7 @@
       </div>
 
       <!-- Collaborators -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full md:w-3/4 mx-auto mb-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full md:w-3/4 mx-auto mb-24">
         <div v-for="collaborator in collaborators" :key="collaborator.id" @mouseenter="collaborator.onEnter"
           @mouseleave="collaborator.onLeave"
           class="hover:shadow-2xl cardina group border border-transparent p-8 rounded-xl duration-300 transition-all mx-12 md:mx-0"
@@ -81,6 +81,7 @@ import marcoImage from '../assets/imgs/team/pinto.png';
 import giorgioImage from '../assets/imgs/team/giorgio.png';
 import fedeImage from '../assets/imgs/team/federica.png';
 import edoImage from '../assets/imgs/team/edo.jpg';
+import gloriaImage from '../assets/imgs/team/gloria.png';
 import { ref, watch, onMounted, onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
@@ -140,23 +141,15 @@ const updateTeam = () => {
 
   collaborators.value = [
     {
-      id: 'giorgio',
-      name: "Giorgio Francone",
-      role: "Commercialista",
-      description: t('team.collaborators.giorgio.description'),
-      pic: giorgioImage,
-      onEnter: () => isHovering.value.giorgio = true,
-      onLeave: () => isHovering.value.giorgio = false
-    },
-    {
-      id: 'federica',
-      name: "Federica Fino",
-      role: "Product Management",
-      description: t('team.collaborators.federica.description'),
-      pic: fedeImage,
-      linkedin: "https://www.linkedin.com/in/federica-fino-0641786/",
-      onEnter: () => isHovering.value.federica = true,
-      onLeave: () => isHovering.value.federica = false
+      id: 'gloria',
+      name: "Gloria Viglione",
+      role: "SM Manager",
+      description: t('team.collaborators.gloria.description'),
+      pic: gloriaImage,
+      instagram: "https://www.instagram.com/gloria.viglione/",
+      linkedin: "https://www.linkedin.com/in/gloria-viglione-88203a269/",
+      onEnter: () => isHovering.value.gloria = true,
+      onLeave: () => isHovering.value.gloria = false
     },
     {
       id: 'edoardo',
@@ -189,8 +182,7 @@ const isHovering = ref({
   'andrea': false,
   'giulio': false,
   'marco': false,
-  'giorgio': false,
-  'federica': false,
+  'gloria': false,
   'edoardo': false
 });
 
@@ -198,8 +190,7 @@ const colors = {
   'andrea': '#dc2626',
   'giulio': '#a855f7',
   'marco': '#15803d',
-  'giorgio': '#fbbf24',
-  'federica': '#1d4ed8',
+  'gloria': '#fbbf24',
   'edoardo': '#14b8a6'
 };
 

@@ -67,11 +67,8 @@ const messages = {
                 }
             },
             collaborators: {
-                giorgio: {
-                    description: "The experience and competence we need"
-                },
-                federica: {
-                    description: "As objective as she is professional"
+                gloria: {
+                    description: "Her creativity is not a skill, but a lifestyle"
                 },
                 edoardo: {
                     description: "The eyes of Fynd, 12 tenths per eye"
@@ -298,11 +295,8 @@ const messages = {
                 }
             },
             collaborators: {
-                giorgio: {
-                    description: "L'esperienza e la competenza di cui abbiamo bisogno"
-                },
-                federica: {
-                    description: "Tanto oggettiva quanto professionale"
+                gloria: {
+                    description: "La sua creatività non è una skill, ma uno stile di vita"
                 },
                 edoardo: {
                     description: "Gli occhi di Fynd, 12 decimi per occhio"

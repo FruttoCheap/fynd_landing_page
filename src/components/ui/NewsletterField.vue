@@ -1,11 +1,11 @@
 <template>
   <form
     action="https://findyournextdestination.us22.list-manage.com/subscribe/post?u=2d0001086ecf7d3d1ac8599e2&amp;id=fa111c3935&amp;f_id=00c8c2e1f0"
-    method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-    <div id="mc_embed_signup_scroll">
-      <div class="mc-field-group"><input type="email" name="EMAIL" class="required email text-black" id="mce-EMAIL"
+    method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate w-full" target="_blank">
+    <div id="mc_embed_signup_scroll" class="">
+      <div class="mc-field-group mb-6"><input type="email" name="EMAIL" class="required email text-black text-center w-2/3 p-3" id="mce-EMAIL"
           placeholder="Email..." required="" value=""
-          style="background-color: white; margin: 0; border-radius: 0.75rem;">
+          style="background-color: white; margin: 0; border-radius: 0.75rem; border: 2px solid #FFA500;">
       </div>
       <div id="mce-responses" class="clear foot">
         <div class="response" id="mce-error-response" style="display: none;"></div>
@@ -17,8 +17,8 @@
       </div>
       <div class="flex flex-row justify-center mt-3">
         <div
-          class="no-select flex flex-row bg-white items-center align-middle justify-center rounded-xl hover:shadow-lg transition-shadow duration-300 ease-in-out w-full py-3 px-3 md:px-9">
-          <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="text-base md:text-xl font-bold"
+          class="no-select flex flex-row bg-orange-400 items-center align-middle justify-center rounded-xl hover:shadow-lg transition-shadow duration-300 ease-in-out py-3 px-3 md:px-9">
+          <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="text-base text-white md:text-xl font-bold"
             value="Subscribe" style="margin: 0; font-size: 1rem;">
         </div>
       </div>

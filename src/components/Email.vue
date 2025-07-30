@@ -6,23 +6,16 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <div class="bg-orange-400 p-6 rounded-3xl shadow-md text-center mx-12 my-24">
-    <div
-      class="relative flex justify-center md:justify-start bg-white border border-orange-400 py-3 px-9 rounded-2xl shadow-xl shadow-black-600 -mt-12 max-w-xl">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 z-20">{{ t('email.title') }}</h2>
-    </div>
-    <div
-      class="flex flex-col md:flex-row md:gap-8 justify-start items-start md:items-center align-bottom mt-9 md:mt-3 px-1 md:px-6">
-      <div class="flex md:w-1/2">
-        <p class="no-select text-white text-base font-semibold md:text-left">
-          {{ t('email.description') }}
-        </p>
-      </div>
-      <div class="justify-center mt-6 md:mt-0 w-full md:w-1/2">
-        <NewsletterField />
-      </div>
+  <div class="flex flex-col space-y-6 px-12 mt-6 md:mt-12 w-full mb-48">
+    <h1 class="z-20 font-bold text-gray-900">{{ t("email.title") }}</h1>
+    <p class="text-base font-semibold text-gray-700 no-select">
+      {{ t('email.description') }}
+    </p>
+    <div class="flex flex-col md:flex-row gap-8 w-full justify-center items-center">
+      <NewsletterField />
     </div>
   </div>
+  
 </template>
 
 <style scoped></style>

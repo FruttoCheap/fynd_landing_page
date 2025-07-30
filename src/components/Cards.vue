@@ -1,6 +1,5 @@
 <template>
-  <div ref="container" class="flex flex-row flex-wrap max-h-[200vh] justify-between -mt-10"
-    :style="{ marginTop: isMobile ? '-18rem' : NaN }">
+  <div ref="container" class="flex flex-row flex-wrap justify-between">
     <div class="flex flex-1 p-12">
       <div class="parallax-container rounded-3xl">
         <div

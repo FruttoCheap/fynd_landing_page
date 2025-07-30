@@ -1,5 +1,5 @@
 <template>
-  <div @click="handleClick" :class="buttonClass" class="no-select flex flex-row items-center align-middle justify-center rounded-xl hover:shadow-lg transition-shadow duration-300 ease-in-out py-3 px-3 md:px-9">
+  <div @click="handleClick" :class="buttonClass" class="no-select flex flex-row items-center align-middle justify-center rounded-xl hover:shadow-lg transition-shadow duration-300 ease-in-out py-3 px-3 md:px-12">
     <div>{{ text }}</div>
     <span v-if="highlightText" class="text-base md:text-xl font-bold ms-1">{{ highlightText }}</span>
   </div>
